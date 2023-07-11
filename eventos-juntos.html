@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keyup</title>
+</head>
+<style>
+  .title {
+    height: 100px;
+    width: 50%;
+    float: center;
+  }
+</style>
+
+<body>
+
+  <input type="text" id="container"> </input>
+  <div id="letraPresionada"></div>
+  <div id="letraLevantada"></div>
+
+  <script>
+
+    const contenedor = document.querySelector("#container")
+
+    container.addEventListener("blur", (event) => {
+      // alert('gracias');
+    })
+
+    container.addEventListener("focus", (event) => {
+      let finalColor = '';
+      if (event.target.style.backgroundColor === 'pink') {
+        finalColor = 'violet';
+      } else {
+        finalColor = 'pink';
+      }
+      event.target.style.backgroundColor = finalColor;
+    });
+
+    container.addEventListener("keydown", (event) => {
+      letraPresionada.textContent = `La letra presionada es la "${event.key}".`;
+    });
+
+    container.addEventListener("keyup", (event) => {
+      letraLevantada.textContent = `La letra levantada es la "${event.key}".`;
+    });
+
+  </script>
+
+</body>
+
+</html>
